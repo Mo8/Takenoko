@@ -42,11 +42,13 @@ cd chemin_absolue_du_projet/
 python3 main.py
 ```
 Pour effectuer le tour d'une unité, il vous suffit d'appuyer sur la barre espace.
+Pour bouger la camera on peut appuyer sur les flèches directionnels ou mettre le pointeur de la souris en bordure de la fenetre dans la direction voulue. 
+On peut zoom/dezoom avec la molette de la souris .
 Les actions effectué par l'unité seront affiché sur le terminal.
 
 ## Credits
 
-Le Git de Takenoko est disponible [ici](https://github.com/cl6ment/lifprojet_2020).
+Le Git de Takenoko est disponible [ici](https://github.com/Mo8/Takenoko.git).
 
 * Etudiants:
     + Julian Cautela (P1706731)
