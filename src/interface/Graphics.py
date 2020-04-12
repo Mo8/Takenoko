@@ -16,7 +16,6 @@ class Graphics:
             "grass": Sprite("grass"),
             "basica": Sprite("basic", "basic0.png"),
             "basicb": Sprite("basic", "basic1.png"),
-            "red_grass": Sprite("red_grass"),
             "wall": Sprite("wall"),
             "door": Sprite("door")
         }
