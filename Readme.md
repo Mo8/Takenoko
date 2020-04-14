@@ -41,7 +41,7 @@ ou
 cd chemin_absolue_du_projet/
 python3 main.py
 ```
-Pour effectuer le tour d'une unité, il vous suffit d'appuyer sur la barre espace.
+Pour effectuer le tour d'une unité, il vous suffit d'appuyer sur la barre espace ou appuyer sur 'o' pour passer le jeu en automatique.
 Pour bouger la camera on peut appuyer sur les flèches directionnels ou mettre le pointeur de la souris en bordure de la fenetre dans la direction voulue. 
 On peut zoom/dezoom avec la molette de la souris .
 Les actions effectué par l'unité seront affiché sur le terminal.

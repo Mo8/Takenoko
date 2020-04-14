@@ -28,22 +28,13 @@ class Sprite:
             print("Exeption occured in loading sprite " + name)
 
 
-    def getFilename(self):
-        return self.filename
-    
-    def getName(self):
-        return self.name
+
     
     def getSprite(self):
         return self.sprite
     
-    def getWidth(self):
-        return self.width
-    
-    def getHeight(self):
-        return self.height
+
     
     
-    def setScale(self, scale):
-        self.scale = scale
+
 

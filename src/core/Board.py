@@ -18,7 +18,6 @@ class Board:
         self.calculSequence()
         self.counterSequence = 0
         self.counterTurn = 0
-        self.beginSizeSequenceTurn = len(self.sequence)
 
     def calculSequence(self):
         self.sequence = []
@@ -58,26 +57,10 @@ class Board:
                 if mapObject.contenu[y][x] == '1' :
                     self.walls[x][y] = True
                 elif mapObject.contenu[y][x] != '0' :
-                    self.characters.append(Basic_Character_Test(mapObject.contenu[y][x]+" "+str(x),5,x,y,mapObject.contenu[y][x]))
+                    self.characters.append(Basic_Character_Test(mapObject.contenu[y][x]+" "+str(x),20,x,y,mapObject.contenu[y][x]))
 
 
-
-
-
-
-        
-
-
-
-
-
-
-
-
-
-
-
-
+#defile le tour du prochain character à jouer et retourne False si aucune équipe n'a gagné et l'id de l'équipe qui a gagné sinon
     def nextCharacterTurn(self):
 
         while self.characters[self.sequence[self.counterSequence][1]].health <= 0:
@@ -87,7 +70,6 @@ class Board:
 
 
             if self.counterSequence == len(self.sequence)   :
-                self.beginSizeSequenceTurn = len(self.sequence)
                 self.counterTurn += 1
                 print("Tour numero ", self.counterTurn)
                 self.counterSequence = 0
@@ -102,7 +84,6 @@ class Board:
         self.counterSequence += 1
 
         if self.counterSequence == len(self.sequence):
-            self.beginSizeSequenceTurn = len(self.sequence)
             self.counterTurn += 1
             print("Tour numero ", self.counterTurn)
             self.counterSequence = 0

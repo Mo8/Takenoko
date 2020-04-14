@@ -11,14 +11,13 @@ class Character:
         self.name = name
         self.health = health
         self.range = None
-        self.attak = None
+        self.attack = None
         self.defense = None
         self.movement_point_max = None
         self.action_point_max = None
         self.movement_point = None
         self.action_point = None
         self.initiative = None
-        self.skill = None
         self.target = None
         self.team = id
         self.path = PathFinding()
@@ -145,7 +144,7 @@ class Character:
                 outOfRange = not (self.rangeTarget())
                 if self.action_point > 0 and outOfRange == False:
 
-                    self.target.takeDamage(self.attak)
+                    self.target.takeDamage(self.attack)
                     self.action_point -= 1
                     print(self.name, " Attaque -> ", self.target.name, "Vie restante : ", self.target.health,
                           "   Point d'action restant  -> ", self.action_point)

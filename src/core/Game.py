@@ -12,13 +12,13 @@ class Game:
         self.graphics = Graphics(name)
 
         # Ajout de la création de map et du passage en argument sur Board()
-        #map0 = Map("/res/Map/arena-1.map")
-        #map0 = Map("/res/Map/arena-35x35.map")
-        map0 = Map("/res/Map/arena-40x40.map")
-        #map0 = Map("/res/Map/arena-100x40.map")
+        #map0 = Map("/res/Map/petite.map")
+        map0 = Map("/res/Map/open-field.map")
+        #map0 = Map("/res/Map/labyrinthe.map")
+        #map0 = Map("/res/Map/custom-nico.map")
         self.board = Board(map0)
 
-        self.pause = False #variable pour mettre le jeu en pause ( useless )
+        self.auto = False #variable pour mettre le jeu en automatique
         pygame.time.set_timer(pygame.USEREVENT+1, 50)#timer qui creer un event toute les 50 ms
         self.fin = False #permet de savoir quand le jeu est fini
         
@@ -53,7 +53,10 @@ class Game:
                 elif event.key == pygame.K_RIGHT :
                     self.graphics.camera.move(1,0)
                 elif event.key == pygame.K_o:
-                    self.pause = True
+                    if self.auto == True:
+                        self.auto = False
+                    else:
+                        self.auto = True
                 elif event.key == pygame.K_SPACE :
                     if self.fin == False:
                         self.fin = self.board.nextCharacterTurn()
@@ -61,6 +64,9 @@ class Game:
 
             #evenement cyclique grace à un timer qui permet de deplacer la camera si la souris est sur un bord de la fenetre
             elif event.type == pygame.USEREVENT+1 and pygame.mouse.get_focused():
+                if self.fin == False and self.auto == True:
+                    self.fin = self.board.nextCharacterTurn()
+
                 if 0 <= mouse[1] <= 20 :
                     self.graphics.camera.move(0,-1)
                 elif self.graphics.height-20 <= mouse[1] <= self.graphics.height:
@@ -78,15 +84,12 @@ class Game:
 
 
     def update(self):
-
-        if self.pause == False :
-            self.events_combat()
+        self.events_combat()
 
 
 
     def display(self):
-        if self.pause == False :
-            self.graphics.display_combat(self.board)
+        self.graphics.display_combat(self.board)
 
 
     def loop(self):

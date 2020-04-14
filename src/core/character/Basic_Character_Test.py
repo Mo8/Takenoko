@@ -6,7 +6,7 @@ class Basic_Character_Test(Character):
 
     def __init__(self, name, health,x,y,id):
         Character.__init__(self,name,health,x,y,id)
-        self.attak = 4
+        self.attack = 4
         self.defense = 1
         self.movement_point_max = 3
         self.action_point_max = 5
